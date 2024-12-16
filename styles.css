@@ -1,0 +1,116 @@
+body {
+    background-color: #fffacf;
+    ;
+    margin-top: 65px;
+    /* Memberi ruang untuk navbar*/
+    
+}
+
+footer {
+    /* Agar selalu terlihat di bawah */
+    bottom: 5;
+    left: 0;
+    width: 100%;
+}
+
+#carouselExampleCaptions {
+    max-width: 500px;
+    /* Batasi lebar carousel */
+    margin: 0 auto;
+    /* Pusatkan carousel */
+    border: 4px solid #ffc107;
+    /* Yellow border */
+    border-radius: 10px;
+    /* rounded corners */
+    overflow: hidden;
+}
+
+#carouselExampleCaptions img {
+    max-height: 350px;
+    /* Batasi tinggi gambar */
+    object-fit: cover;
+    /* Sesuaikan gambar agar tidak pecah */
+}
+
+#carouselGallery {
+    max-width: 600px;
+    /* Batasi lebar carousel */
+    margin: 0 auto;
+    /* Pusatkan carousel */
+
+    margin-bottom: 5px;
+}
+
+#carouselGallery img {
+    max-height: 400px;
+    /* Batasi tinggi gambar */
+    object-fit: cover;
+    /* Sesuaikan gambar agar tidak pecah */
+}
+
+#carouselGallery img:hover {
+    transform: scale(1.1);
+}
+
+#carouselGallery2 {
+    max-width: 600px;
+    /* Batasi lebar carousel */
+    margin: 0 auto;
+    /* Pusatkan carousel */
+    margin-bottom: 5px;
+}
+
+#carouselGallery2 img {
+    max-height: 400px;
+    /* Batasi tinggi gambar */
+    object-fit: cover;
+    /* Sesuaikan gambar agar tidak pecah */
+}
+
+#carouselGallery2 img:hover {
+    transform: scale(1.1);
+}
+
+#map {
+    width: 90%;
+    height: 650px;
+}
+
+.map-container {
+    display: flex;
+    /* flexbox */
+    justify-content: center;
+    /* Posisi tengah horizontal */
+    margin-bottom: 70px;
+}
+
+#resultsTable {
+
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#resultsTable th,
+#resultsTable td {
+    padding: 8px 12px;
+    border: 1px solid #43b7fb;
+}
+
+#resultsTable th {
+    background-color: #ffc107;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 5px;
+}
+
+#galeri{
+    margin-top: 70px;
+}

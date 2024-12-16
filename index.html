@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoWorldCup 2014</title>
+
+    <!-- css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- css Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- css datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+    <link rel="stylesheet" href="styles.css"> <!-- Link to lokal CSS file -->
+    <link rel="stylesheet" href="webfontkit-20241216-095943\stylesheet.css"> <!-- Link ke css font kustom -->
+
+</head>
+
+<body>
+
+    <!-- javascript bootsrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- JS Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- JS Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- JS Datatables -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-success bg-gradient fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#"><img src="images\world-cup.png" alt="Logo" width="35"
+                    height="35" class="d-inline-block">GeoWorldCup 2014</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="headHome" class="nav-link active text-white" aria-current="page" href="#"><i
+                                class="bi bi-house-door"></i>
+                            Overview</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="headPeta" class="nav-link text-white" href="#peta"> <i class="bi bi-pin-map-fill"></i>
+                            Map</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="headData" class="nav-link text-white" href="#data"> <i class="bi bi-layers-half"></i>
+                            Match Data</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="headGaleri" class="nav-link text-white" href="#galeri"> <i class="bi bi-image"></i>
+                            Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-person-circle"></i> </a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="false">Disabled</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Info -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Author Profile</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table striped">
+                        <tr>
+                            <th>Name</th>
+                            <td>Demas Wistara Aryasatya</td>
+                        </tr>
+                        <tr>
+                            <th>NIM</th>
+                            <td>23/520409/SV/23237</td>
+                        </tr>
+                        <tr>
+                            <th>Twitter</th>
+                            <td <i class="bi bi-twitter"></i> <a href="https://x.com/Kakademmm" target="_blank"
+                                    rel="noopener no-referrer"> Kakademmm</a></td>
+                        </tr>
+                        <tr>
+                            <th>Instagram</th>
+                            <td <i class="bi bi-instagram"></i> <a href="https://www.instagram.com/demaswist/"
+                                    target="_blank" rel="noopener no-referrer"> demaswist</a></td>
+                        </tr>
+                        <tr>
+                            <th>Github</th>
+                            <td <i class="bi bi-github"></i> <a href="https://github.com/4ryasatya" target="_blank"
+                                    rel="noopener noreferrer"> 4ryasatya</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Landing Page-->
+    <main class="container my-5 p-3">
+        <h1 id="judul" class="text-center text-success">Welcome to GeoWorldCup 2014</h1>
+        <div class="text-center">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="stadium_photos/maracana.jpg" class="d-block w-100" alt="Stadion Maracana">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h6>Maracanã Stadium</h6>
+                            <p>The Maracanã Stadium in Rio de Janeiro is iconic and has hosted numerous significant
+                                matches throughout history.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/mascot.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h6>Fuleco</h6>
+                            <p>The official mascot, Fuleco, represents the Brazillian three-banded armadillo.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/brazuca2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h6>Adidas Brazuca</h6>
+                            <p>The 2014 FIFA World Cup Official Match Ball.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- Deskripsi/Latar Belakang -->
+            <div id="latar" class="my-4 p-3 bg-success-subtle rounded shadow-sm">
+                <p>Website to recall the glory of the 2014 Football Festival in the the Festive Country</p>
+                <p>FIFA World Cup 2014 was held in Brazil. It was the 20th edition of the quadrennial biggest football
+                    world
+                    championships. The tournament took place across 12 cities in Brazil, each hosting matches in various
+                    stadiums. Rio de Janeiro, São Paulo, Belo Horizonte, The Capital Brasilia, El Salvador, Fortaleza,
+                    Recife, Natal, Curitiba, Manaus, Cuiabá, and Porto Alegre. These cities were chosen not only for
+                    their
+                    infrastructure but also for their cultural significance and love for football. </p>
+
+                <p>
+                    As the host nation, Brazil has a rich football heritage, being home to five World Cup titles (1958,
+                    1962, 1970, 1994, and 2002). The country is known for its skillful players and attacking style of
+                    play,
+                    often referred to as "Joga Bonito". Joga Bonito is a Portuguese phrase that translates to "play
+                    beautifully." It encapsulates the Brazilian philosophy of football that emphasizes skill,
+                    creativity,
+                    and flair on the pitch.
+                </p>
+
+                <p>
+                    The tournament featured 32 teams from around the world, competing in a total of 64 matches. Germany
+                    emerged as the champion, defeating Argentina 1-0 in the final, thanks to Mario Götze's extra-time
+                    goal.
+                    The tournament was notable for its thrilling matches, including Brazil's shocking 1-7 defeat to
+                    Germany
+                    in the semi-finals.
+                </p>
+
+                <p>
+                    The FIFA World Cup 2014 was not just a sporting event; it was a celebration of global football
+                    culture.
+                    Each participating country brought its unique heritage to the tournament, creating memorable moments
+                    that will be cherished by fans worldwide. The blend of Brazil’s vibrant culture with the diverse
+                    backgrounds of competing nations made this World Cup a remarkable chapter in football history.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Peta -->
+    <h2 id="peta" class="text-center text-success my-4">The Venues and Spectators Heatmap</h2>
+    <div class="map-container">
+        <div id="map" class="rounded shadow-sm"></div>
+    </div>
+
+
+    <!-- Tabel Hasil pertandingan -->
+    <h2 id="data" class="text-center text-success">Match Results</h2>
+    <div class="table-container mb-5 p-4 bg-success-subtle rounded shadow-sm">
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Venue</th>
+                    <th>Date</th>
+                    <th>Tim 1</th>
+                    <th>Flag</th>
+                    <th>Tim 2</th>
+                    <th>Flag</th>
+                    <th>Result</th>
+                    <th>Stage</th>
+                    <th>Spectators</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Baris data akan ditambahkan di sini menggunakan JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Carousel Galeri Foto -->
+    <h2 id="galeri" class="text-center text-success">Memorable Moments</h2>
+    <div class="gallery-container">
+        <div id="carouselGallery" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/flyingdutchman.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Flying Dutchman</h5>
+                            <p class="card-text">One of the goals of the tournament, a social media craze and a
+                                dramatic, unexpected, completely comprehensive Dutch win against the defending champion,
+                                Spain.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/davidluis.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Host Roars</h5>
+                            <p class="card-text">David Luiz scores a glorious free kick against Colombia, sends the
+                                crowd in Estadio Castelao jumping like crazyyy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/neymarinjury.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Disaster for the host</h5>
+                            <p class="card-text">Local hero, Neymar JR went down in pain after a horrific tackle by Juan
+                                Carlos Zuniga
+                                in the match Brazil vs Colombia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/cr7.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Captain Failure</h5>
+                            <p class="card-text">Cristiano Ronaldo dissappointed after Portugal got knocked out at the
+                                group stage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/curse.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Curse Continues</h5>
+                            <p class="card-text">The defending champion curse continues as Spain crashed out of the
+                                group stage, despite winning the World Title at 2010.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div id="carouselGallery2" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselGallery2" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselGallery2" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselGallery2" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselGallery2" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselGallery2" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/timkrul.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tim Krul The Shootout Hero</h5>
+                            <p class="card-text">Louis van Gaal saw fit to make a third and final substitution in the
+                                120th minute of his Netherlands side's World Cup quarter-final tie against Costa Rica.
+                                Tim Krul made two saves to ensure the Netherlands progressed to the last four.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/trashing.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">1-7 Tragedy</h5>
+                            <p class="card-text">Germany ripped apart Brazil's fragile, unprotected defence; showed
+                                fast, attacking football to remain the most thrilling spectacle in the game.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/gotze.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Super-sub Mario</h5>
+                            <p class="card-text">Mario Goetze celebrates scoring the world cup winning goal after coming
+                                on as sub in the final against Argentina.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/messi.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Upset for The Star</h5>
+                            <p class="card-text">Lionel Messi, Argentine sensation, stares emptily at the World Cup
+                                Trophy after losing the final against Germany.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="images/welmeister.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Melmeister</h5>
+                            <p class="card-text">Der Panser claims their fourth world title after defeating Argentina at
+                                the dying minutes of extra time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Menghubungkan leaflet dengan Geoserver -->
+    <script src="lib/L.Geoserver.js"></script>
+
+    <!-- Plugin Leaflet: Heatmap -->
+    <script src="lib/leaflet-heat.js"></script>
+
+    <script>
+        // Inisialisasi peta
+        var map = L.map("map").setView([-13.500438564885876, -50.84581429233744], 4);
+
+        // Tile Layer Base Map
+
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        });
+
+        // Menambahkan basemap ke dalam peta
+        osm.addTo(map);
+
+        //data penonton untuk HeatMap (Lat, Long, Weight)
+        var heatData = [
+            [-15.6040428, -56.1216527, 0.43], // Arena Pantanal
+            [-25.4482225, -49.2769327, 0.47], // Arena da Baixada
+            [-3.0832878, -60.0281592, 0.6],  // Arena da Amazônia
+            [-30.0655389, -51.235942, 0.63],  // Estádio Beira-Rio
+            [-23.5453041, -46.474208, 0.86],  // Arena Corinthians
+            [-12.978786, -38.5042256, 0.72],  // Arena Fonte Nova
+            [-22.9121313, -43.2301851, 0.95], // Estádio do Maracanã
+            [-8.0407149, -35.0081566, 0.55],  // Arena Pernambuco
+            [-5.8267421, -35.2124031, 0.53],  // Arena das Dunas
+            [-3.8072363, -38.5224931, 0.67],  // Estádio Plácido Aderaldo Castelo
+            [-19.865892, -43.9710628, 0.67],  // Estádio Governador Magalhães Pinto
+            [-15.7835105, -47.899207, 0.89]   // Estádio Nacional de Brasília
+        ];
+
+        // Tambahkan heatmap ke peta
+        var heat = L.heatLayer(heatData, {
+            radius: 23,
+            blur: 6,
+            maxZoom: 5,
+        })
+        heat.addTo(map);
+
+        // GeoJSON Titik Stadion
+        var stadion = L.geoJSON(null, {
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    icon: L.icon({
+                        iconUrl: "stadium.png", // icon marker
+                        iconSize: [40, 40], // ukuran icon
+                        iconAnchor: [24, 48], // posisi icon terhadap titik (point)
+                        popupAnchor: [0, -48], // posisi popup terhadap icon
+                        tooltipAnchor: [-16, -30], // posisi tooltip terhadap icon
+                    }),
+                });
+            },
+
+            // onEachFeature
+            onEachFeature: function (feature, layer) {
+                // variable popup content
+                var popup_content = `<strong>${feature.properties.name}</strong><br>
+                Koordinat: ${feature.geometry.coordinates[1]}, ${feature.geometry.coordinates[0]}<br>
+                Kota: ${feature.properties.city}<br>
+                Kapasitas: ${feature.properties.capacity}<br>
+                <img src="${feature.properties.image}" alt="${feature.properties.name}" style="width:200px; height:auto;"/>`;
+
+                layer.on({
+                    click: function (e) {
+                        stadion.bindPopup(popup_content);
+                    },
+
+                    mouseover: function (e) {
+                        stadion.bindTooltip(feature.properties.name, {
+                            direction: "top",
+                            sticky: false,
+                        });
+                    },
+                });
+            },
+        })
+
+        $.getJSON("football-worldcup-2014-stadiums.geojson", function (data) {
+            stadion.addData(data); // Menambahkan data ke dalam GeoJSON Point
+            map.addLayer(stadion); // Menambahkan GeoJSON Point ke dalam peta
+        });
+
+        // wms request layer shapefile brazil
+        var brazil = L.Geoserver.wms("http://localhost:8080/geoserver/wms", {
+            layers: "responsi_pgweb:brazil",
+            transparent: true,
+        });
+        //brazil.addTo(map); Dikomen biar tidak autoload saat website dibuka
+
+        //wms request layer jalan brazil
+        var jalanbrazil = L.Geoserver.wms("http://localhost:8080/geoserver/wms", {
+            layers: "responsi_pgweb:SNV_202001A",
+            transparent: true,
+        });
+        jalanbrazil.addTo(map);
+
+        // Control Layer
+        var baseMaps = {
+            "OpenStreetMap": osm,
+            "Esri World Imagery": Esri_WorldImagery,
+        };
+
+        var overlayMaps = {
+            "World Cup Venues": stadion,
+            "Brazil Country": brazil,
+            "Major Roads": jalanbrazil,
+        };
+
+        var controllayer = L.control.layers(baseMaps, overlayMaps);
+        controllayer.addTo(map);
+
+        //skala batang
+        var scale = L.control.scale({
+            position: "bottomright",
+            imperial: false
+        });
+        scale.addTo(map);
+
+        const flagMap = {
+            "Aljazair": "flags/aljazair.png",
+            "Australia": "flags/australia.png",
+            "Amerika Serikat": "flags/as.png",
+            "Argentina": "flags/argentina2.png",
+            "Belanda": "flags/belanda.png",
+            "Belgia": "flags/belgia.png",
+            "Bosnia & Herzegovina": "flags/bosnia.png",
+            "Brazil": "flags/brazil.png",
+            "Chile": "flags/chile.png",
+            "Ekuador": "flags/Ekuador2.png",
+            "Ghana": "flags/Ghana2.png",
+            "Honduras": "flags/Honduras2.png",
+            "Inggris": "flags/Inggris2.png",
+            "Iran": "flags/iran2.png",
+            "Italia": "flags/italia2.png",
+            "Jepang": "flags/japan.png",
+            "Jerman": "flags/Jerman.png",
+            "Kamerun": "flags/Kamerun.png",
+            "Kolombia": "flags/Kolombia.png",
+            "Korea Selatan": "flags/south-korea.png",
+            "Kosta Rika": "flags/cr.png",
+            "Kroasia": "flags/croatia.png",
+            "Meksiko": "flags/mexico.png",
+            "Nigeria": "flags/Nigeria2.png",
+            "Pantai Gading": "flags/ic.png",
+            "Portugal": "flags/Portugal.png",
+            "Prancis": "flags/Prancis.png",
+            "Rusia": "flags/Rusia.png",
+            "Spanyol": "flags/spanyol2.png",
+            "Swiss": "flags/Swiss.png",
+            "Uruguay": "flags/Uruguay.png",
+            "Yunani": "flags/yunani.png",
+        };
+
+
+        //Pengisian data ke dalam tabel hasil pertandingan
+        fetch('database.php')
+            .then(response => response.json())
+            .then(data => {
+
+                console.log(data);
+                const tableBody = document.querySelector('#resultsTable tbody');
+
+                data.forEach(match => {
+                    // Buat baris baru untuk setiap hasil pertandingan
+                    const row = document.createElement('tr');
+
+                    // Isi kolom data
+                    row.innerHTML = `
+                <td>${match.stadium}</td>
+                <td>${match.date}</td>
+                <td>${match.team1}</td>
+                <td><img src="${flagMap[match.team1]}" alt="${match.team1} Flag" style="width:50px;height:50px;"></td>
+                <td>${match.team2}</td>
+                <td><img src="${flagMap[match.team2]}" alt="${match.team2} Flag" style="width:50px;height:50px;"></td>
+                <td>${match.result}</td>
+                <td>${match.babak}</td>
+                <td>${match.penonton}</td>
+            `;
+
+                    // Tambahkan baris ke dalam tabel
+                    tableBody.appendChild(row);
+
+                    //Implementasi dataTables terhadap tabel yang sudah terisi data
+                    $(document).ready(function () {
+                        $('#resultsTable').DataTable();
+                    });
+                });
+            })
+    </script>
+
+    <footer class="text-center bg-success bg-gradient p-3">
+        <p class="text-light">&copy; 2024 Demas WA. Sistem Informasi Geografis | Departemen Teknologi Kebumian | Sekolah
+            Vokasi |
+            Universitas Gadjah Mada.
+        </p>
+        <p class="text-light">Praktikum Pemrograman Geospasial: Web 2024</p>
+    </footer>
+</body>
+
+</html>

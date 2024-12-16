@@ -17,3 +17,6 @@ shp jalan dan shp polygon: Internet/OpenStreetMap
 Foto: Internet, GettyImages
 
 Catatan: file database yang dimuat tersambung pad PHP, sehingga tidak dapat dilihat pada halaman web. File SQL dari database sudah saya masukkan dalam folder "db".
+
+![Screenshot (1056)](https://github.com/user-attachments/assets/7ca4eed3-8cfa-46c4-b9f9-c53d01bd1cd1)
+![Screenshot (1057)](https://github.com/user-attachments/assets/4a40acd2-f9b0-419c-a989-a8da972b01bb)

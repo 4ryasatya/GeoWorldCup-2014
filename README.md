@@ -1,7 +1,7 @@
 # 🏆 GeoWorldCup 2014 🌍
 
 
-## Description:
+## Description
 GeoWorldCup 2014 adalah sebuah proyek WebGIS interaktif yang menampilkan:
 
 1. Titik lokasi stadion yang digunakan pada Piala Dunia FIFA 2014.
@@ -9,7 +9,7 @@ GeoWorldCup 2014 adalah sebuah proyek WebGIS interaktif yang menampilkan:
 3. Tabel pertandingan yang dapat di-sort dan filter sesuai kebutuhan pengguna.
 4. Galeri foto yang memuat momen-momen ikonik Piala Dunia FIFA 2014.
 
-## Features:
+## Features
 - **WebGIS Interaktif**
 
   Menampilkan peta lokasi stadion dan data pendukung lainnya menggunakan Leaflet.JS.
@@ -27,13 +27,13 @@ GeoWorldCup 2014 adalah sebuah proyek WebGIS interaktif yang menampilkan:
   Filter data sesuai kebutuhan pengguna.
 
 
-- Galeri Carousel
+- **Galeri Carousel**
 
   Tampilan foto-foto dari momen ikonik menggunakan Bootstrap Carousel.
 
 
  
-## Framework/Libraries Used:
+## Framework/Libraries Used
   1. Leaflet.JS: Untuk elemen WebGIS interaktif.
   2. Bootstrap: Untuk tampilan navbar, galeri, dan komponen responsif.
   3. PHP: Integrasi dengan database.

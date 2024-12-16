@@ -59,14 +59,14 @@ GeoWorldCup-2014/
 │   └── images/          # Foto-foto stadion dan momen Piala Dunia
 │
 ├── db/                  # File database SQL
-│   └── GeoWorldCup.sql  # Skrip database (tabel stadion, pertandingan, dll)
+│   └── responsi_pgweb.sql  # Skrip database (tabel stadion, pertandingan, dll)
 │
-├── index.php            # Halaman utama
-├── map.php              # Peta WebGIS
-├── gallery.php          # Galeri foto
+├── index.html            # Halaman utama
+├── map              # Peta WebGIS
+├── gallery          # Galeri foto
 ├── data.php             # Data pertandingan
 │
-└── README.md            # File dokumentasi proyek ini
+└── README.md            # File dokumentasi proyek
 ```
 
 ## Database

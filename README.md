@@ -10,19 +10,19 @@ GeoWorldCup 2014 adalah sebuah proyek WebGIS interaktif yang menampilkan:
 4. Galeri foto yang memuat momen-momen ikonik Piala Dunia FIFA 2014.
 
 ## Features:
-- WebGIS Interaktif
+- **WebGIS Interaktif**
 
   Menampilkan peta lokasi stadion dan data pendukung lainnya menggunakan Leaflet.JS.
 
-- Heatmap Penonton
+- **Heatmap Penonton**
 
   Visualisasi jumlah rata-rata penonton di setiap stadion dalam bentuk heatmap.
 
-- Tabel Data Pertandingan
+- **Tabel Data Pertandingan**
 
   Menggunakan dataTables untuk mengelola data pertandingan:
 
-- Sortir data berdasarkan kolom tertentu.
+- **Sortir data berdasarkan kolom atau data tertentu**.
 
   Filter data sesuai kebutuhan pengguna.
 
@@ -72,7 +72,7 @@ GeoWorldCup-2014/
 ## Database
 - Struktur database tersedia dalam folder db/ dalam file database yang berformat .sql.
 - File ini berisi data stadion, data pertandingan, dan informasi pendukung lainnya.
-- Catatan: File database hanya dapat diakses melalui koneksi PHP.
+- File database hanya dapat diakses melalui koneksi PHP.
 
 ## Screenshots
 1. Peta Stadion dan Heatmap Penonton
@@ -85,7 +85,7 @@ GeoWorldCup-2014/
 ![image](https://github.com/user-attachments/assets/e362a5bf-481a-4b07-bb8f-20033fdbfd0f)
 
 ## How to Access GeoWorldCup-2014 in Your Device:
-1. Kloning Repository ke perangkat komputer Anda:
+1. _Kloning Repository_ ke perangkat komputer Anda:
    ```
    https://github.com/4ryasatya/GeoWorldCup-2014
    ```
@@ -93,10 +93,9 @@ GeoWorldCup-2014/
    Masuk ke phpMyAdmin atau MySQL.
    Import file database berformat sql dari folder db.
 3. Konfigurasi Database:
-   Edit file config.php (jika ada) dengan kredensial database Anda.
+   Edit file config.php (jika ada) dengan kredensial database yang Anda miliki.
 4. Jalankan Proyek:
    Jalankan server lokal seperti XAMPP atau WAMP.
    Akses melalui browser: http://localhost/GeoWorldCup-2014/.
 
-### 🎉 Happy Surfing!
-
+🎉 **Happy Surfing!**

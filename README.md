@@ -7,5 +7,5 @@ Komponen yang digunakan: Leaflet.JS elemen WebGIS Bootstrap untuk elemen navbar 
 Sumber data: GeoJSON Stadion: Internet/OSM shp jalan dan shp polygon: Internet/OpenStreetMap Foto: Internet, GettyImages
 
 Catatan: file database yang dimuat tersambung pad PHP, sehingga tidak dapat dilihat pada halaman web. File SQL dari database sudah saya masukkan dalam folder "db".
-
-Screenshot (1056) Screenshot (1057)
+![Screenshot (1057)](https://github.com/user-attachments/assets/528b89ab-9c33-4c77-b886-5e025dfae94e)
+![Screenshot (1056)](https://github.com/user-attachments/assets/1b41f5f7-4c2a-4638-978b-9f46892ba949)

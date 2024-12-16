@@ -62,8 +62,8 @@ GeoWorldCup-2014/
 │   └── responsi_pgweb.sql  # Skrip database (tabel stadion, pertandingan, dll)
 │
 ├── index.html            # Halaman utama
-├── map              # Peta WebGIS
-├── gallery          # Galeri foto
+├── map                   # Peta WebGIS
+├── gallery               # Galeri foto
 ├── data.php             # Data pertandingan
 │
 └── README.md            # File dokumentasi proyek
